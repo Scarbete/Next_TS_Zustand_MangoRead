@@ -1,0 +1,55 @@
+.customModal
+    width: 780px
+    border-radius: var(--spacing-32)
+    padding: 37px 60px 60px
+
+    .userInfo
+        display: flex
+        gap: 52px
+
+        &__image
+            object-fit: cover
+            border-radius: 50%
+            overflow: hidden
+
+        p
+            font-size: 35px
+            font-style: normal
+            line-height: normal
+
+    .inputForm
+        margin: 53px 0 0 0
+        position: relative
+        height: 52px
+        border-radius: 8px
+        border: 1px solid var(--colors-base-black)
+        overflow: hidden
+
+        input
+            width: 75%
+            padding: 0 10px 0
+            top: 0
+            bottom: 0
+            left: 0
+            position: absolute
+            font-size: 18px
+
+        input::placeholder
+            color: var(--colors-gray-250)
+
+        button
+            width: 25%
+            top: 0
+            bottom: 0
+            right: 0
+            position: absolute
+            background: var(--colors-base-pink)
+            color: var(--colors-base-white)
+            font-size: 16px
+            text-transform: uppercase
+
+    .error
+        border: 1px solid var(--colors-system-error)
+
+        input::placeholder
+            color: var(--colors-system-error)

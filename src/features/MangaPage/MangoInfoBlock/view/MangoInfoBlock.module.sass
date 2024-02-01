@@ -1,0 +1,47 @@
+
+.mangoInfoBlock
+    display: flex
+    gap: 41px
+    margin: 0 0 33px 0
+
+    .mangaImage
+        border-radius: 16px
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.20)
+        overflow: hidden
+
+        img
+            object-fit: cover
+            transition: 200ms
+
+        &:hover
+            img
+                transform: scale(1.02)
+                transition: 200ms
+
+    .mangaText
+        h2
+            font-size: 40px
+            font-weight: 500
+            line-height: normal
+
+        ul
+            margin: 40px 0 0 0
+            display: flex
+            flex-direction: column
+            gap: 21px
+
+            li
+                p
+                    font-size: 24px
+                    line-height: 35px
+
+                    span
+                        margin-left: 5px
+                        color: var(--colors-gray-250)
+                        font-size: 24px
+                        line-height: 35px
+
+        h3
+            font-size: 30px
+            font-weight: 400
+            line-height: normal

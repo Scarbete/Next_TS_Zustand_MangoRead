@@ -1,0 +1,60 @@
+.headerSearchBar
+    position: relative
+
+    .searchBox
+        position: relative
+        width: 342px
+        height: 56px
+        border-radius: var(--spacing-8)
+        border: 2px solid var(--colors-gray-250)
+        background: var(--colors-base-white)
+        display: flex
+        align-items: center
+        overflow: hidden
+
+        .searchImage
+            top: 50%
+            bottom: 50%
+            left: 20px
+            transform: translate(-50%, -50%)
+            position: absolute
+            z-index: 5
+            transition: 150ms
+
+        input
+            position: absolute
+            height: 100%
+            top: 0
+            right: 0
+            bottom: 0
+            font-size: 20px
+            font-weight: 400
+            padding-right: 16px
+            transition: 200ms
+
+        input::placeholder
+            color: var(--colors-gray-200)
+
+        &:focus-within
+            border: 2px solid var(--colors-base-pink)
+
+    .searchList
+        position: absolute
+        padding: var(--spacing-12)
+        border-radius: 6px
+        left: 0
+        right: 0
+        height: fit-content
+        background: var(--colors-base-white)
+        z-index: 10
+
+        &__count
+            margin: 0 0 10px 0
+            font-weight: 500
+
+        li
+            width: fit-content
+            height: fit-content
+
+        li:hover
+            text-decoration: underline

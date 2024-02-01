@@ -1,0 +1,57 @@
+.mangaComments
+    margin: 33px 0 0 0
+
+    .commentTopBar
+        display: flex
+        justify-content: space-between
+
+        h3
+            font-size: 35px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
+
+        button
+            color: var(--colors-base-pink)
+            font-size: 18px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
+            text-transform: uppercase
+
+    .commentsWrapper
+        margin: 33px 0 0 0
+
+        &__Box
+            display: flex
+            flex-direction: column
+            gap: 33px
+
+            .userComment
+                display: flex
+
+                &__imageBox
+                    border-right: 1px solid var(--colors-gray-250)
+                    padding-right: 26px
+                    margin-right: 26px
+
+                    img
+                        border-radius: 50%
+                        object-fit: cover
+
+                &__TextBox
+                    h3
+                        font-size: 35px
+                        font-style: normal
+                        line-height: normal
+                        margin: 0 0 13px 0
+
+                    p
+                        color: var(--colors-gray-250)
+                        font-size: 24px
+                        line-height: 35px
+
+        .nullComments
+            color: var(--colors-gray-250)
+            font-size: 24px
+            line-height: 35px

@@ -1,0 +1,56 @@
+.modalContainer
+    width: 603px !important
+
+    .modalNavBar
+        position: relative
+        height: 76px
+        border-bottom: 2px solid var(--colors-gray-250)
+        margin: 21px 46px 40px
+
+        &__buttons
+            display: flex
+            align-items: flex-end
+            height: 100%
+            width: fit-content
+
+            button
+                height: 100%
+                color: var(--colors-base-black)
+                display: flex
+                align-items: flex-end
+                padding-bottom: 4px
+                font-size: 24px
+
+            button:nth-child(1)
+                padding-right: 15px
+
+            button:nth-child(2)
+                padding-left: 15px
+
+            .divider
+                position: absolute
+                bottom: -3px
+                background: #AD02E0
+                width: 164px
+                height: 5px
+                border-radius: 2px
+                transition: 300ms
+
+        &__closeImage
+            top: 0
+            right: 0
+            position: absolute
+            cursor: pointer
+            transition: 200ms
+
+            &:hover
+                transform: scale(1.08)
+                transition: 200ms
+
+    .modalSlider
+        height: 500px
+        display: flex
+        gap: 100px
+        overflow: hidden
+        padding: 20px 46px
+        transition: 300ms

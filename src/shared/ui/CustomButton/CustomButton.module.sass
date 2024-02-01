@@ -1,0 +1,68 @@
+.button
+    padding: var(--spacing-16) var(--spacing-32)
+    border-radius: var(--spacing-8)
+    border: 2px solid rgba(0, 0, 0, 0)
+
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    text-transform: uppercase
+
+    transition: 250ms
+
+    &.default
+        background: var(--colors-base-pink)
+        color: var(--colors-base-white)
+
+        &:hover
+            box-shadow: 0 0 20px 0 var(--colors-base-pink)
+            transition: 250ms
+
+        &:active
+            transition: 250ms
+
+        &.disabled
+            pointer-events: none
+            color: var(--colors-base-white)
+            background: var(--colors-gray-200)
+            font-weight: 400
+
+    &.outline
+        color: var(--colors-base-black)
+        border: 2px solid var(--colors-base-pink)
+
+        &:hover
+            background: var(--colors-base-pink)
+            box-shadow: 0 0 20px 0 var(--colors-base-pink)
+            color: var(--colors-base-white)
+            transition: 250ms
+
+        &:active
+            transition: 250ms
+
+        &.disabled
+            pointer-events: none
+            color: var(--colors-base-white)
+            background: var(--colors-gray-200)
+            font-weight: 400
+
+    &.secondary
+        color: var(--colors-base-white)
+        background: var(--colors-base_light-pink)
+        border: 2px solid var(--colors-base_light-pink)
+
+        &:hover
+            box-shadow: 0 0 20px 0 var(--colors-base-pink)
+            color: var(--colors-base-white)
+            border: 2px solid var(--colors-base_light-pink)
+            transition: 250ms
+
+        &:active
+            transition: 250ms
+
+        &.disabled
+            pointer-events: none
+            color: var(--colors-base-white)
+            background: var(--colors-gray-200)
+            font-weight: 400
