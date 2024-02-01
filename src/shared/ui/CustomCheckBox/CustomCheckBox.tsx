@@ -1,3 +1,4 @@
+'use client'
 import { ChangeEvent, FC, ReactNode, memo } from 'react'
 import Image from 'next/image'
 import classes from './CustomCheckBox.module.sass'
@@ -7,8 +8,8 @@ interface Props {
     error?: boolean
     children?: ReactNode
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void
-    checkBoxOn: string
-    checkBoxOff: string
+    checkBoxOnImage: string
+    checkBoxOffImage: string
 }
 
 const CustomCheckbox:FC<Props> = props => {
@@ -17,8 +18,8 @@ const CustomCheckbox:FC<Props> = props => {
         onChange,
         error,
         children,
-        checkBoxOn,
-        checkBoxOff
+        checkBoxOnImage,
+        checkBoxOffImage
     } = props
 
     return (
@@ -31,14 +32,14 @@ const CustomCheckbox:FC<Props> = props => {
             />
             <div className={classes.customCheckbox}>
                 <Image
-                    src={checkBoxOn}
+                    src={checkBoxOnImage}
                     alt={'checkBoxOn'}
                     width={35}
                     height={35}
                     className={classes.tickMark}
                 />
                 <Image
-                    src={checkBoxOff}
+                    src={checkBoxOffImage}
                     alt={'checkBoxOff'}
                     width={35}
                     height={35}

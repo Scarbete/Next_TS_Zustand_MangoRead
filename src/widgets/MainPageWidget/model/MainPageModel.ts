@@ -19,7 +19,7 @@ export const getAllGenre = async (): Promise<GenresMainPage> => {
 
 export const useMainPageModel = create<IMainPageModel>((set) => ({
     mangasResponse: null,
-    limit: 4,
+    limit: 12,
     offset: 0,
     count: 0,
     page: 1,

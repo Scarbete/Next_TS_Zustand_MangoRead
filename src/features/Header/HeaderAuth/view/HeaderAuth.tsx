@@ -15,6 +15,9 @@ const HeaderAuth: FC = () => {
 
     const toggleSignOutFocus = () => setIsSignOutFocus((!isSignOutFocus))
 
+    const openSignIn = () => setModal(ModalShowTypes.SignIn)
+    const openSignUp = () => setModal(ModalShowTypes.SignUp)
+
     const handleLogout = () => {
         localStorage.clear()
         window.location.reload()
@@ -25,7 +28,10 @@ const HeaderAuth: FC = () => {
             {userData
                 ? <div className={classes.userBlock}>
                     <p>{userData.username}</p>
-                    <button onClick={toggleSignOutFocus} className={classes.logButton}>
+                    <button
+                        onClick={toggleSignOutFocus}
+                        className={classes.logButton}
+                    >
                         <Image
                             src={userData?.image as string}
                             alt={'userImage'}
@@ -42,10 +48,10 @@ const HeaderAuth: FC = () => {
                         />
                     </button>
                 </div> : <>
-                    <CustomButton variant={'outline'} onClick={() => setModal(ModalShowTypes.SignIn)}>
+                    <CustomButton variant={'outline'} onClick={openSignIn}>
                         войти
                     </CustomButton>
-                    <CustomButton onClick={() => setModal(ModalShowTypes.SignUp)}>
+                    <CustomButton onClick={openSignUp}>
                         регистрация
                     </CustomButton>
                 </>
@@ -53,7 +59,7 @@ const HeaderAuth: FC = () => {
             <ul
                 className={classes.dropDownView}
                 style={{
-                    opacity: isSignOutFocus ? '1' : '0',
+                    opacity: Number(isSignOutFocus),
                     height: isSignOutFocus ? '80px' : '0px',
                 }}
             >

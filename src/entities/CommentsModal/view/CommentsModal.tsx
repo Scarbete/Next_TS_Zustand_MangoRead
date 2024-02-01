@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { ICommentsModalProps } from '@/entities/CommentsModal/types/CommentsModalTypes'
 import { useCommentsModal } from '@/entities/CommentsModal/model/CommentsModalModel'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
-import Modal from '@/shared/ui/Modal/Modal'
+import CustomModal from '@/shared/ui/CustomModal/CustomModal'
 import classNames from 'classnames'
 import Image from 'next/image'
 import classes from './CommentsModal.module.sass'
@@ -23,7 +23,7 @@ const CommentsModal: FC<ICommentsModalProps> = props => {
 
     return (
         <>
-            <Modal open={isModalShow} handleClose={() => toggleShowModal(false)} className={classes.customModal}>
+            <CustomModal open={isModalShow} handleClose={() => toggleShowModal(false)} className={classes.customModal}>
                 <div className={classes.userInfo}>
                     <Image
                         src={userData?.image as string}
@@ -50,7 +50,7 @@ const CommentsModal: FC<ICommentsModalProps> = props => {
                     />
                     <button>Добавить</button>
                 </form>
-            </Modal>
+            </CustomModal>
         </>
     )
 }

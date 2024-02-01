@@ -19,13 +19,12 @@ const TypesFilterBar: FC<Props> = props => {
     const { genres } = props
     const { setFilterType } = useFilterModel()
 
-    const changeCheckBox = (id: number) => {
-        console.log(id)
-    }
-
     return (
         <div className={classes.typesFilter}>
-            <div className={classes.typesFilter__topBar} onClick={setFilterType}>
+            <div
+                className={classes.typesFilter__topBar}
+                onClick={setFilterType}
+            >
                 <h3>Жанры</h3>
                 <div className={classes.filterToggle}>
                     <span>Все</span>
@@ -43,11 +42,12 @@ const TypesFilterBar: FC<Props> = props => {
                     {genres.map(item =>
                         <CustomCheckbox
                             key={item.id}
-                            onChange={() => changeCheckBox(Number(item.id))}
-                            checkBoxOn={checkBoxOn}
-                            checkBoxOff={checkBoxOff}
+                            checkBoxOnImage={checkBoxOn}
+                            checkBoxOffImage={checkBoxOff}
                         >
-                            <p className={classes.checkBoxLabel}>{item.name}</p>
+                            <p className={classes.checkBoxLabel}>
+                                {item.name}
+                            </p>
                         </CustomCheckbox>
                     )}
                 </div>

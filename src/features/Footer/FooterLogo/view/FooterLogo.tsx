@@ -1,9 +1,9 @@
+import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react'
 
-import classes from './FooterLogo.module.sass'
 import footerLogo from '@/shared/assets/images/Footer/FooterLogo.svg'
+import classes from './FooterLogo.module.sass'
 
 
 const FooterLogo: FC = () => {

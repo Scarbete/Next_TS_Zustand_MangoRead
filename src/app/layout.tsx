@@ -14,6 +14,7 @@ interface RootLayoutState {
     children: ReactNode
 }
 
+
 const RootLayout: FC<RootLayoutState> = props => {
     const { children } = props
 

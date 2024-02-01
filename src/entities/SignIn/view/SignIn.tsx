@@ -49,7 +49,11 @@ const SignIn: FC = () => {
     }, [successSignIn])
 
     return (
-        <form className={classes.SignIn} onSubmit={handleSubmit} style={{marginLeft: isSignIn ? '0' : 'calc(-100% - 100px)'}}>
+        <form
+            className={classes.SignIn}
+            onSubmit={handleSubmit}
+            style={{marginLeft: isSignIn ? '0' : 'calc(-100% - 100px)'}}
+        >
             <CustomInput
                 value={username}
                 onChange={handleChangeInput}
@@ -66,8 +70,14 @@ const SignIn: FC = () => {
                 placeholder={'Password'}
                 maxLength={60}
             />
-            <CustomCheckBox onChange={toggleCheckBox} checkBoxOn={checkBoxOn} checkBoxOff={checkBoxOff}>
-                <p className={classes.checkBoxTitle}>Запомнить меня</p>
+            <CustomCheckBox
+                onChange={toggleCheckBox}
+                checkBoxOnImage={checkBoxOn}
+                checkBoxOffImage={checkBoxOff}
+            >
+                <p className={classes.checkBoxTitle}>
+                    Запомнить меня
+                </p>
             </CustomCheckBox>
             <CustomButton>
                 Вход

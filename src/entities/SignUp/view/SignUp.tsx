@@ -43,6 +43,7 @@ const SignUp: FC = () => {
 
     const handleDragEnter: DragEventHandler<HTMLLabelElement> = (event) => event.preventDefault()
     const handleDragOver: DragEventHandler<HTMLLabelElement> = (event) => event.preventDefault()
+
     const handleDrop: DragEventHandler<HTMLLabelElement> = (event) => {
         event.preventDefault()
         const file = event.dataTransfer.files?.[0]

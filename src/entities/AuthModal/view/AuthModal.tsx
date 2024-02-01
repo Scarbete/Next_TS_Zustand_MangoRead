@@ -4,7 +4,7 @@ import { ModalShowTypes } from '../types/AuthModalTypes'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
 import SignIn from '@/entities/SignIn/view/SignIn'
 import SignUp from '@/entities/SignUp/view/SignUp'
-import Modal from '@/shared/ui/Modal/Modal'
+import CustomModal from '@/shared/ui/CustomModal/CustomModal'
 
 import classes from './AuthModal.module.sass'
 import modalCloseImage from '@/shared/assets/images/Modal/CloseModal.svg'
@@ -14,23 +14,30 @@ const AuthModal = () => {
     const { modalShowType, setModal } = useAuthModel()
     const isSignIn = modalShowType === ModalShowTypes.SignIn
 
+    const closeModal = () => setModal(ModalShowTypes.Close)
+    const openSignIn = () => setModal(ModalShowTypes.SignIn)
+    const openSignUp = () => setModal(ModalShowTypes.SignUp)
+
     return (
-        <Modal
+        <CustomModal
             open={Boolean(modalShowType)}
-            handleClose={() => setModal(ModalShowTypes.Close)}
+            handleClose={closeModal}
             contentClass={classes.modalContainer}
         >
             <div className={classes.modalNavBar}>
                 <div className={classes.modalNavBar__buttons}>
-                    <button onClick={() => setModal(ModalShowTypes.SignIn)}>
+                    <button onClick={openSignIn}>
                         Вход
                     </button>
-                    <button onClick={() => setModal(ModalShowTypes.SignUp)}>
+                    <button onClick={openSignUp}>
                         Регистрация
                     </button>
                     <div
                         className={classes.divider}
-                        style={{left: isSignIn ? '-0px' : '92px', width: isSignIn ? '64px' : '164px'}}
+                        style={{
+                            left: isSignIn ? '-0px' : '92px',
+                            width: isSignIn ? '64px' : '164px'
+                        }}
                     ></div>
                 </div>
                 <Image
@@ -39,14 +46,17 @@ const AuthModal = () => {
                     width={23}
                     height={23}
                     className={classes.modalNavBar__closeImage}
-                    onClick={() => setModal(ModalShowTypes.Close)}
+                    onClick={closeModal}
                 />
             </div>
-            <div style={{height: isSignIn ? '340px' : '520px'}} className={classes.modalSlider}>
+            <div
+                style={{height: isSignIn ? '340px' : '520px'}}
+                className={classes.modalSlider}
+            >
                 <SignIn/>
                 <SignUp/>
             </div>
-        </Modal>
+        </CustomModal>
     )
 }
 

@@ -1,10 +1,10 @@
 'use client'
 import { ChangeEvent, FC } from 'react'
 import { Pagination, ThemeProvider } from '@mui/material'
+import { useScrollToTop } from '@/shared/lib/hooks/useScrollToTop'
 import { useMainPageModel } from '@/widgets/MainPageWidget/model/MainPageModel'
 import { theme } from '@/shared/assets/muiTheme/muiTheme'
 import classes from './MangaPagination.module.sass'
-import {useScrollToTop} from "@/shared/lib/hooks/useScrollToTop";
 
 
 const MangaPagination: FC = () => {

@@ -8,7 +8,6 @@ import classes from './Header.module.sass'
 
 
 const Header: FC = () => {
-
     return (
         <header className={classes.header}>
             <MultiContainer className={classes.container}>

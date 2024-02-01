@@ -13,8 +13,8 @@
     align-items: center
     justify-content: center
     position: relative
-    transition: border-color .2s
     overflow: hidden
+    transition: 2000ms
 
 .tickMark
     position: absolute
@@ -22,16 +22,19 @@
     display: none
     border-bottom: 2px solid var(--colors-blue-600)
     border-right: 2px solid var(--colors-blue-600)
-    transition: border .2s
+    transition: 2000ms
+    animation: checkBoxAnimate 350ms
 
 .input
     display: none
 
 .input:checked+.customCheckbox
     border-color: var(--colors-blue-600)
+    transition: 2000ms
 
 .input:checked+.customCheckbox .tickMark
     display: block
+    transition: 2000ms
 
 .text
     user-select: none
@@ -39,3 +42,13 @@
 .errorText
     a
         color: var(--colors-system-error)
+
+
+
+@keyframes checkBoxAnimate
+    from
+        transform: translateY(-4px)
+        opacity: 0
+    to
+        opacity: 1
+        transform: translateY(0)

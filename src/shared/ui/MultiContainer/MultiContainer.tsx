@@ -7,7 +7,7 @@ interface Props {
     className?: string
 }
 
-const MultiContainer: FC<Props> = (props) => {
+const MultiContainer: FC<Props> = props => {
     const { children, className } = props
 
     return (

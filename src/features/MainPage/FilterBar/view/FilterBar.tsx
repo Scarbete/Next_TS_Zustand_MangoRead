@@ -19,7 +19,10 @@ const FilterBar: FC<Props> = props => {
 
     return (
         <div className={classes.filterBar}>
-            <div className={classes.filterSlider} style={{marginLeft: isGenreFilter ? '0' : '-500px'}}>
+            <div
+                className={classes.filterSlider}
+                style={{marginLeft: isGenreFilter ? '0' : '-500px'}}
+            >
                 <TypesFilterBar genres={genres} />
                 <GenresFilter/>
             </div>
