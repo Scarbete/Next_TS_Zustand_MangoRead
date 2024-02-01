@@ -3,7 +3,7 @@ import { FC, useState } from 'react'
 import Image from 'next/image'
 import CustomButton from '@/shared/ui/CustomButton/CustomButton'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
-import { ModalShowTypes } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import { ModalShowTypes } from '@/entities/AuthModal/types/AuthModalTypes'
 
 import dropDown from '@/shared/assets/images/Header/arrow_drop_down.svg'
 import classes from './HeaderAuth.module.sass'

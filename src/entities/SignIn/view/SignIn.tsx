@@ -1,6 +1,6 @@
 'use client'
 import { ChangeEvent, FC, useEffect } from 'react'
-import { ModalShowTypes } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import { ModalShowTypes } from '@/entities/AuthModal/types/AuthModalTypes'
 import { useSignInModel } from '@/entities/SignIn/model/SignInModel'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
 
