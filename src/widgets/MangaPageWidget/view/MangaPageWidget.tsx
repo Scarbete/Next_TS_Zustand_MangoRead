@@ -1,13 +1,16 @@
 'use client'
 import { FC, useEffect, useState } from 'react'
-import { IMangaPageProps } from '@/widgets/MangaPageWidget/types/MangaPageTypes'
 import { asyncGetManga } from '@/widgets/MangaPageWidget/model/MangaPageModel'
+
 import AuthModal from '@/entities/AuthModal/view/AuthModal'
 import CommentsModal from '@/entities/CommentsModal/view/CommentsModal'
 import MangoInfoBlock from '@/features/MangaPage/MangoInfoBlock/view/MangoInfoBlock'
 import MangaSynopsis from '@/features/MangaPage/MangaSynopsis/view/MangaSynopsis'
 import MangaComments from '@/features/MangaPage/MangaComments/view/MangaComments'
 
+interface IMangaPageProps {
+    id: string
+}
 
 const MangaPageWidget: FC<IMangaPageProps> = props => {
     const { id } = props
