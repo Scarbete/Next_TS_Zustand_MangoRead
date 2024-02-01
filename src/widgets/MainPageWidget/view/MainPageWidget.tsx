@@ -24,7 +24,6 @@ const MainPageWidget: FC<IMainPageProps> = props => {
 
     useEffect(() => {
         asyncGetAllMangas(limit, offset)
-        useScrollToTop()
     }, [page])
 
     return (

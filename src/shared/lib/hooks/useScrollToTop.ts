@@ -1,4 +1,3 @@
-'use client'
 
 export const useScrollToTop = () => {
     window.scroll({

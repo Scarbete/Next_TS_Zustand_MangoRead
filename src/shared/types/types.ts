@@ -1,5 +1,4 @@
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type CustomError = any
 
 export interface IResponse {
