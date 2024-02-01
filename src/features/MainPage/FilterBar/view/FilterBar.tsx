@@ -2,9 +2,11 @@
 import { FC } from 'react'
 import { IGenre } from '@/widgets/MainPageWidget/types/MainPageTypes'
 import { useFilterModel } from '@/features/MainPage/FilterBar/model/FilterBarModel'
+
 import CustomButton from '@/shared/ui/CustomButton/CustomButton'
 import TypesFilterBar from '@/features/MainPage/TypesFilterBar/view/TypesFilterBar'
 import GenresFilter from '@/features/MainPage/GenresFilter/view/GenresFilter'
+
 import classes from './FilterBar.module.sass'
 
 interface Props {
