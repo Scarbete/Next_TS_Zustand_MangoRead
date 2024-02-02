@@ -5,6 +5,7 @@ import { $mainApi } from '@/shared/lib/axios/requester'
 import { alertToast } from '@/shared/ui/CustomAlert/CustomAlert'
 import { CustomError } from '@/shared/types/types'
 import { generateAlertErrorText } from '@/shared/lib/utils/alertErrorText'
+import {createForm} from "@/shared/lib/helpers/helpers";
 
 
 export const useSignUpModel = create<ISignUpModel>((set, get) => ({
@@ -39,11 +40,13 @@ export const useSignUpModel = create<ISignUpModel>((set, get) => ({
     validateForm: () => {
         const { userData, userImage } = get()
         const { username, password } = userData
+
         const newErrors = {
             username: Boolean(!username.trim() || username.trim().length < 6),
             password: Boolean(!password.trim() || password.trim().length < 6),
             image: Boolean(!userImage),
         }
+
         set({ errors: newErrors })
         return Object.values(newErrors).every((error) => !error)
     },
@@ -69,13 +72,9 @@ export const useSignUpModel = create<ISignUpModel>((set, get) => ({
         if (validateForm()) asyncSignUp(userData)
         else alertToast('error', textForAlertToast())
     },
-    asyncSignUp: async ({ image, username, nickname, password }) => {
+    asyncSignUp: async (userData) => {
         try {
-            const form = new FormData
-            form.append('image', image!)
-            form.append('username', username!)
-            form.append('nickname', nickname!)
-            form.append('password', password!)
+            const form = createForm(userData)
 
             const { status } = await $mainApi.post(`users/signup/`, form)
             if (status <= 204 && status >= 200) {
