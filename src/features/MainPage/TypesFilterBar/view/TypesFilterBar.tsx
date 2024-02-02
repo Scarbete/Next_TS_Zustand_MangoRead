@@ -8,8 +8,8 @@ import Image from 'next/image'
 import classes from './TypesFilterBar.module.sass'
 import genresArrowImage from '@/shared/assets/images/Filter/genresArrow.svg'
 
-import checkBoxOn from '@/shared/assets/images/Filter/checkBoxOn.svg'
-import checkBoxOff from '@/shared/assets/images/Filter/checkBoxOff.svg'
+import checkBoxOnImage from '@/shared/assets/images/Filter/checkBoxOn.svg'
+import checkBoxOffImage from '@/shared/assets/images/Filter/checkBoxOff.svg'
 
 interface Props {
     genres: IGenre[]
@@ -42,8 +42,8 @@ const TypesFilterBar: FC<Props> = props => {
                     {genres.map(item =>
                         <CustomCheckbox
                             key={item.id}
-                            checkBoxOnImage={checkBoxOn}
-                            checkBoxOffImage={checkBoxOff}
+                            checkBoxOnImage={checkBoxOnImage}
+                            checkBoxOffImage={checkBoxOffImage}
                         >
                             <p className={classes.checkBoxLabel}>
                                 {item.name}

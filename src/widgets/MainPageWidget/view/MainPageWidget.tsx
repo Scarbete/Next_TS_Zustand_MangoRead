@@ -30,12 +30,8 @@ const MainPageWidget: FC<IMainPageProps> = props => {
         <div className={classes.mainPageWidget}>
             <AuthModal/>
             <div className={classes.widget}>
-                <div>
-                    <FilterBar genres={genres ?? []} />
-                </div>
-                <div>
-                    <MangaList mangas={mangasResponse?.results ?? []} />
-                </div>
+                <FilterBar genres={genres ?? []} />
+                <MangaList mangas={mangasResponse?.results ?? []} />
             </div>
             <MangaPagination />
         </div>
