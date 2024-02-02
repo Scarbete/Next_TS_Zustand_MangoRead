@@ -5,7 +5,7 @@ import { $mainApi } from '@/shared/lib/axios/requester'
 import { alertToast } from '@/shared/ui/CustomAlert/CustomAlert'
 import { CustomError } from '@/shared/types/types'
 import { generateAlertErrorText } from '@/shared/lib/utils/alertErrorText'
-import {createForm} from "@/shared/lib/helpers/helpers";
+import { createForm } from '@/shared/lib/helpers/helpers'
 
 
 export const useSignUpModel = create<ISignUpModel>((set, get) => ({
