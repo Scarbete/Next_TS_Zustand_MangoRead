@@ -1,5 +1,5 @@
 'use client'
-import { FC } from 'react'
+import {ChangeEventHandler, FC, FormEventHandler} from 'react'
 import { ICommentsModalProps } from '@/entities/CommentsModal/types/CommentsModalTypes'
 import { useCommentsModal } from '@/entities/CommentsModal/model/CommentsModalModel'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
@@ -12,6 +12,7 @@ import classes from './CommentsModal.module.sass'
 const CommentsModal: FC<ICommentsModalProps> = props => {
     const { mangaId } = props
     const { userData, user_id } = useAuthModel()
+
     const {
         isModalShow,
         commentText,
@@ -21,17 +22,34 @@ const CommentsModal: FC<ICommentsModalProps> = props => {
         handleSubmit
     } = useCommentsModal()
 
+    const changeCommentText: ChangeEventHandler<HTMLInputElement> = (event) => {
+        setCommentText(event.target.value)
+    }
+
+    const submitForm: FormEventHandler<HTMLFormElement> = (event) => {
+        event.preventDefault()
+        handleSubmit(Number(mangaId), Number(user_id))
+    }
+
+    const closeModal = () => toggleShowModal(false)
+
     return (
         <>
-            <CustomModal open={isModalShow} handleClose={() => toggleShowModal(false)} className={classes.customModal}>
+            <CustomModal
+                open={isModalShow}
+                handleClose={closeModal}
+                className={classes.customModal}
+            >
                 <div className={classes.userInfo}>
-                    <Image
-                        src={userData?.image as string}
-                        alt={'userImage'}
-                        width={100}
-                        height={100}
-                        className={classes.userInfo__image}
-                    />
+                    {typeof userData?.image === 'string' && (
+                        <Image
+                            src={userData?.image}
+                            alt={'userImage'}
+                            width={100}
+                            height={100}
+                            className={classes.userInfo__image}
+                        />
+                    )}
                     <p>{userData?.username}, {userData?.nickname}</p>
                 </div>
                 <form
@@ -39,11 +57,11 @@ const CommentsModal: FC<ICommentsModalProps> = props => {
                         classes.inputForm,
                         {[ classes.error ]: commentInputError},
                     )}
-                    onSubmit={e => handleSubmit(e, Number(mangaId), Number(user_id))}
+                    onSubmit={submitForm}
                 >
                     <input
                         value={commentText}
-                        onChange={e => setCommentText(e.target.value)}
+                        onChange={changeCommentText}
                         type="text"
                         placeholder={'Добавьте комментарий'}
                         maxLength={200}

@@ -21,9 +21,9 @@ export const useCommentsModal = create<ICommentsModelState>((set, get) => ({
     toggleShowModal: (bool) => {
         set({ isModalShow: bool })
     },
-    handleSubmit: (event, mangaId, userId) => {
+    handleSubmit: (mangaId, userId) => {
         const { commentText, setCommentText, setCommentInputError, asyncPostComment } = get()
-        event.preventDefault()
+
         if (commentText.trim()) {
             setCommentText('')
             setCommentInputError(false)

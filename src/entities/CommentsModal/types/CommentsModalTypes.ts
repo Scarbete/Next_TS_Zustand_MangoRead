@@ -1,4 +1,3 @@
-import { FormEvent } from 'react'
 import { IComment } from '@/features/MangaPage/MangaComments/types/types'
 
 
@@ -21,6 +20,6 @@ export interface ICommentsModelState {
     setCommentInputError: (bool: boolean) => void
     setCommentText: (text: string) => void
     toggleShowModal: (bool: boolean) => void
-    handleSubmit: (event: FormEvent<HTMLFormElement>, mangaId: number, userId: number) => void
+    handleSubmit: (mangaId: number, userId: number) => void
     asyncPostComment: (commentData: ICommentData) => void
 }

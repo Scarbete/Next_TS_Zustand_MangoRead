@@ -8,8 +8,8 @@ import CustomCheckBox from '@/shared/ui/CustomCheckBox/CustomCheckBox'
 import CustomInput from '@/shared/ui/CustomInput/CustomInput'
 import CustomButton from '@/shared/ui/CustomButton/CustomButton'
 
-import checkBoxOn from '@/shared/assets/images/Modal/signInCheckBoxOn.svg'
-import checkBoxOff from '@/shared/assets/images/Modal/signInCheckBoxOff.svg'
+import checkBoxOnImage from '@/shared/assets/images/Modal/signInCheckBoxOn.svg'
+import checkBoxOffImage from '@/shared/assets/images/Modal/signInCheckBoxOff.svg'
 import classes from './SignIn.module.sass'
 
 
@@ -72,8 +72,8 @@ const SignIn: FC = () => {
             />
             <CustomCheckBox
                 onChange={toggleCheckBox}
-                checkBoxOnImage={checkBoxOn}
-                checkBoxOffImage={checkBoxOff}
+                checkBoxOnImage={checkBoxOnImage}
+                checkBoxOffImage={checkBoxOffImage}
             >
                 <p className={classes.checkBoxTitle}>
                     Запомнить меня
