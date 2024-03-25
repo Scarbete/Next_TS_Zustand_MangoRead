@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { ModalShowTypes } from '../types/AuthModalTypes'
+import { ModalShowTypes } from '@/entities/AuthModal'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
 import { SignIn } from '@/entities/SignIn'
 import { SignUp } from '@/entities/SignUp'

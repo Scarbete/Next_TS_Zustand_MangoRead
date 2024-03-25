@@ -1,1 +1,1 @@
-export { default as RootTemplateLayout } from './RootTemplateLayout'
+export { default as RootTemplateLayout } from './view/RootTemplateLayout'

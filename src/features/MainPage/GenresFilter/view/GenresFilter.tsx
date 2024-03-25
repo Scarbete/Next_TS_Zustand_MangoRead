@@ -1,7 +1,7 @@
 'use client'
-import classes from './GenresFilter.module.sass'
 import { FC } from 'react'
 import { useFilterModel } from '@/features/MainPage/FilterBar/model/FilterBarModel'
+import classes from './GenresFilter.module.sass'
 
 
 const GenresFilter: FC = () => {

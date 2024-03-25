@@ -4,8 +4,8 @@ import { IGenre } from '@/widgets/MainPageWidget/types/MainPageTypes'
 import { useFilterModel } from '@/features/MainPage/FilterBar/model/FilterBarModel'
 
 import CustomButton from '@/shared/ui/CustomButton/view/CustomButton'
-import TypesFilterBar from '@/features/MainPage/TypesFilterBar/view/TypesFilterBar'
-import GenresFilter from '@/features/MainPage/GenresFilter/view/GenresFilter'
+import { TypesFilterBar } from '@/features/MainPage/TypesFilterBar'
+import { GenresFilter } from '@/features/MainPage/GenresFilter'
 
 import classes from './FilterBar.module.sass'
 

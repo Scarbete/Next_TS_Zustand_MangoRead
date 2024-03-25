@@ -4,6 +4,8 @@ import { FC, ReactNode } from 'react'
 import { Header } from '@/widgets/Header'
 import { Footer } from '@/widgets/Footer'
 
+import classes from './RootTemplateLayout.module.scss'
+
 interface Props {
     children: ReactNode
 }
@@ -14,10 +16,10 @@ const RootTemplateLayout: FC<Props> = props => {
     return (
         <html lang={'en'}>
             <body>
-                <div id={'portal'} style={{ zIndex: '2', position: 'relative' }}>
+                <div id={'portal'}>
                     <ToastContainer/>
                 </div>
-                <div style={{ zIndex: '1', position: 'relative' }}>
+                <div className={classes.root}>
                     <Header/>
                     <main>
                         {children}

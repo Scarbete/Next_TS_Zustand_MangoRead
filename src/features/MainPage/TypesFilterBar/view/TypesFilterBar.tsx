@@ -1,9 +1,10 @@
 'use client'
 import { FC } from 'react'
-import { IGenre } from '@/widgets/MainPageWidget/types/MainPageTypes'
-import { useFilterModel } from '@/features/MainPage/FilterBar/model/FilterBarModel'
-import CustomCheckbox from '@/shared/ui/CustomCheckBox/view/CustomCheckBox'
+
 import Image from 'next/image'
+import CustomCheckbox from '@/shared/ui/CustomCheckBox/view/CustomCheckBox'
+import { useFilterModel } from '@/features/MainPage/FilterBar'
+import { IGenre } from '@/widgets/MainPageWidget'
 
 import genresArrowImage from '@/shared/assets/images/Filter/genresArrow.svg'
 import checkBoxOnImage from '@/shared/assets/images/Filter/checkBoxOn.svg'

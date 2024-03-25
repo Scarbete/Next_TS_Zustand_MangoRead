@@ -1,6 +1,5 @@
 import { IComment } from '@/features/MangaPage/MangaComments/types/types'
 
-
 export interface ICommentsModalProps {
     mangaId: number
 }

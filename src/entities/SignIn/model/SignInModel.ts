@@ -1,13 +1,13 @@
-import { IDecoded, ISignInModelState } from '@/entities/SignIn/types/SignInTypes'
+import Cookies from 'js-cookie'
 import { create } from 'zustand'
 import { jwtDecode } from 'jwt-decode'
-import Cookies from 'js-cookie'
 
 import { $authApi, $mainApi } from '@/shared/lib/axios/requester'
-import { alertToast } from '@/shared/ui/CustomAlert/CustomAlert'
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/shared/lib/variables/variables'
+import { alertToast } from '@/shared/ui/CustomAlert/CustomAlert'
 import { CustomError } from '@/shared/types/types'
 import { generateAlertErrorText } from '@/shared/lib/utils/alertErrorText'
+import { IDecoded, ISignInModelState } from '@/entities/SignIn'
 
 
 export const useSignInModel = create<ISignInModelState>((set, get) => ({

@@ -1,9 +1,9 @@
 'use client'
-import Image from 'next/image'
 import { ChangeEventHandler, FC, FormEventHandler } from 'react'
 
-import { CustomModal } from '@/shared/ui/CustomModal'
+import Image from 'next/image'
 import classNames from 'classnames'
+import { CustomModal } from '@/shared/ui/CustomModal'
 
 import { ICommentsModalProps, useCommentsModal } from '@/entities/CommentsModal'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
