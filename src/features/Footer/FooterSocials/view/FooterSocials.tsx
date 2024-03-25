@@ -1,8 +1,7 @@
 'use client'
 import Image from 'next/image'
-import { useFooterSocials } from '@/features/Footer/FooterSocials/model/FooterSocialsModel'
 import { FC } from 'react'
-
+import { useFooterSocials } from '@/features/Footer/FooterSocials/model/FooterSocialsModel'
 import classes from './FooterSocials.module.sass'
 
 

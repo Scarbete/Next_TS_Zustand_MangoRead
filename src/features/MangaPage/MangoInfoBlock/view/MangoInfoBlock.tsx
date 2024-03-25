@@ -8,6 +8,7 @@ interface Props {
     manga: IManga | null
 }
 
+
 const MangoInfoBlock: FC<Props> = props => {
     const { manga } = props
 

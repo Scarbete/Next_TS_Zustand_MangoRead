@@ -5,11 +5,10 @@ import { useFilterModel } from '@/features/MainPage/FilterBar/model/FilterBarMod
 import CustomCheckbox from '@/shared/ui/CustomCheckBox/CustomCheckBox'
 import Image from 'next/image'
 
-import classes from './TypesFilterBar.module.sass'
 import genresArrowImage from '@/shared/assets/images/Filter/genresArrow.svg'
-
 import checkBoxOnImage from '@/shared/assets/images/Filter/checkBoxOn.svg'
 import checkBoxOffImage from '@/shared/assets/images/Filter/checkBoxOff.svg'
+import classes from './TypesFilterBar.module.sass'
 
 interface Props {
     genres: IGenre[]

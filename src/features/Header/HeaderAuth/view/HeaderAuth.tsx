@@ -1,11 +1,11 @@
 'use client'
 import { FC, useState } from 'react'
 import Image from 'next/image'
-import CustomButton from '@/shared/ui/CustomButton/CustomButton'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
 import { ModalShowTypes } from '@/entities/AuthModal/types/AuthModalTypes'
+import CustomButton from '@/shared/ui/CustomButton/CustomButton'
 
-import dropDown from '@/shared/assets/images/Header/arrow_drop_down.svg'
+import dropDownImage from '@/shared/assets/images/Header/arrow_drop_down.svg'
 import classes from './HeaderAuth.module.sass'
 
 
@@ -25,13 +25,10 @@ const HeaderAuth: FC = () => {
 
     return (
         <div className={classes.authButtons}>
-            {userData
-                ? <div className={classes.userBlock}>
+            {userData ? (
+                <div className={classes.userBlock}>
                     <p>{userData.username}</p>
-                    <button
-                        onClick={toggleSignOutFocus}
-                        className={classes.logButton}
-                    >
+                    <button onClick={toggleSignOutFocus} className={classes.logButton}>
                         <Image
                             src={userData?.image as string}
                             alt={'userImage'}
@@ -40,14 +37,16 @@ const HeaderAuth: FC = () => {
                             className={classes.userBlock__img}
                         />
                         <Image
-                            src={dropDown}
+                            src={dropDownImage}
                             alt={'dropDown'}
                             height={24}
                             width={24}
                             style={{transform: `rotate(${isSignOutFocus ? '180' : '0'}deg)`}}
                         />
                     </button>
-                </div> : <>
+                </div>
+            ) : (
+                <>
                     <CustomButton variant={'outline'} onClick={openSignIn}>
                         войти
                     </CustomButton>
@@ -55,7 +54,7 @@ const HeaderAuth: FC = () => {
                         регистрация
                     </CustomButton>
                 </>
-            }
+            )}
             <ul
                 className={classes.dropDownView}
                 style={{

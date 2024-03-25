@@ -3,7 +3,6 @@ import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react
 import { createPortal } from 'react-dom'
 import classes from './CustomModal.module.sass'
 
-
 interface Props {
     children: ReactNode,
     open: boolean,
@@ -12,6 +11,7 @@ interface Props {
     contentClass?: string,
     style?: CSSProperties
 }
+
 
 const CustomModal: FC<Props> = props => {
     const { children, open, handleClose, className, contentClass, style } = props
@@ -23,9 +23,7 @@ const CustomModal: FC<Props> = props => {
     useEffect(() => {
         clearTimeout(timer.current)
         if (!open) {
-            timer.current = setTimeout(() => {
-                setMounted(false)
-            }, 300)
+            timer.current = setTimeout(() => setMounted(false), 300)
             document.body.style.overflow = 'auto'
         }
         else {
@@ -37,10 +35,7 @@ const CustomModal: FC<Props> = props => {
     return !mounted ? <></> : createPortal(
         <>
             <div
-                className={`
-                    ${classes.background} 
-                    ${open ? classes.open : classes.closed}`
-                }
+                className={`${classes.background} ${open ? classes.open : classes.closed}`}
                 onClick={event => {
                     event.stopPropagation()
                     handleClose()

@@ -4,7 +4,6 @@ import FooterLogo from '@/features/Footer/FooterLogo/view/FooterLogo'
 import FooterSocials from '@/features/Footer/FooterSocials/view/FooterSocials'
 import FooterMap from '@/features/Footer/FooterMap/view/FooterMap'
 import FooterBottom from '@/features/Footer/FooterBottom/view/FooterBottom'
-
 import classes from './Footer.module.sass'
 
 

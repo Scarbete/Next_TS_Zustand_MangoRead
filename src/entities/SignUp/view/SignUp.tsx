@@ -1,12 +1,12 @@
 'use client'
 import { ChangeEvent, DragEventHandler, FC, useEffect, useRef } from 'react'
+import { ModalShowTypes } from '@/entities/AuthModal/types/AuthModalTypes'
 import Image from 'next/image'
 
 import { useSignUpModel } from '@/entities/SignUp/model/SignUpModel'
-import { ModalShowTypes } from '@/entities/AuthModal/types/AuthModalTypes'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
-import CustomButton from '@/shared/ui/CustomButton/CustomButton'
 import CustomInput from '@/shared/ui/CustomInput/CustomInput'
+import CustomButton from '@/shared/ui/CustomButton/CustomButton'
 
 import classes from './SignUp.module.sass'
 import defaultAvatar from '@/shared/assets/images/Modal/AvatarMangoRead.png'

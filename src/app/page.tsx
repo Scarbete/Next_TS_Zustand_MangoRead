@@ -11,9 +11,7 @@ const MainPage: FC = async () => {
 
     return (
         <MultiContainer>
-            <MainPageWidget
-                genres={genres?.results ?? null}
-            />
+            <MainPageWidget genres={genres?.results ?? null}/>
         </MultiContainer>
     )
 }

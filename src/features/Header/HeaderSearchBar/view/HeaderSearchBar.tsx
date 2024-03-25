@@ -1,12 +1,12 @@
 'use client'
 import Image from 'next/image'
-import { ChangeEventHandler, FC, useEffect } from 'react'
-
-import classes from './HeaderSearchBar.module.sass'
-import searchImage from '@/shared/assets/images/Header/HeaderSearchIcon.svg'
-import { useHeaderSearchModel } from '@/features/Header/HeaderSearchBar/model/HeaderSearchModel'
-import { useDebounce } from '@/shared/lib/utils/debounce'
 import Link from 'next/link'
+import { ChangeEventHandler, FC, useEffect } from 'react'
+import { useDebounce } from '@/shared/lib/utils/debounce'
+import { useHeaderSearchModel } from '@/features/Header/HeaderSearchBar/model/HeaderSearchModel'
+
+import searchImage from '@/shared/assets/images/Header/HeaderSearchIcon.svg'
+import classes from './HeaderSearchBar.module.sass'
 
 
 const HeaderSearchBar: FC = () => {

@@ -3,7 +3,6 @@ import HeaderLogo from '@/features/Header/HeaderLogo/view/HeaderLogo'
 import HeaderSearchBar from '@/features/Header/HeaderSearchBar/view/HeaderSearchBar'
 import HeaderAuth from '@/features/Header/HeaderAuth/view/HeaderAuth'
 import MultiContainer from '@/shared/ui/MultiContainer/MultiContainer'
-
 import classes from './Header.module.sass'
 
 
