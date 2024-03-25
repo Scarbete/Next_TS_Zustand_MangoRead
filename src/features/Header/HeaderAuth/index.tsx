@@ -1,0 +1,1 @@
+export {default as HeaderAuth} from './view/HeaderAuth'

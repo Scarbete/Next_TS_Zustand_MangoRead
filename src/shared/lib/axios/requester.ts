@@ -1,6 +1,8 @@
 import { ACCESS_TOKEN } from '../variables/variables'
 import axios, { AxiosInstance } from 'axios'
 
+import Cookies from 'js-cookie'
+
 const createApi = (): AxiosInstance => {
     return axios.create({
         baseURL: process.env.BASE_URL,
@@ -11,7 +13,12 @@ const $mainApi = createApi()
 const $authApi = createApi()
 
 $authApi.interceptors.request.use(( config ) => {
-    config.headers!.Authorization = `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`
+    const accessToken = Cookies.get(ACCESS_TOKEN)
+
+    if (accessToken) {
+        config.headers!.Authorization = `Bearer ${accessToken}`
+    }
+
     return config
 })
 

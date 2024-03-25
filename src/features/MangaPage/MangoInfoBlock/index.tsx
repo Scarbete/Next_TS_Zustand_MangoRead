@@ -1,0 +1,1 @@
+export {default as MangoInfoBlock} from './view/MangoInfoBlock'

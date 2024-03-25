@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { IManga } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import { IManga } from '@/widgets/MainPageWidget'
 import MangaCard from '@/features/MainPage/MangaCard/view/MangaCard'
 import classes from './MangaList.module.sass'
 

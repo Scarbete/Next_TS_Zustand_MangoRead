@@ -1,16 +1,16 @@
 'use client'
 import { FC, useState } from 'react'
 import Image from 'next/image'
-import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
-import { ModalShowTypes } from '@/entities/AuthModal/types/AuthModalTypes'
-import CustomButton from '@/shared/ui/CustomButton/CustomButton'
+
+import { ModalShowTypes, useAuthModel } from '@/entities/AuthModal'
+import { CustomButton } from '@/shared/ui/CustomButton'
 
 import dropDownImage from '@/shared/assets/images/Header/arrow_drop_down.svg'
 import classes from './HeaderAuth.module.sass'
 
 
 const HeaderAuth: FC = () => {
-    const { setModal, userData } = useAuthModel()
+    const { setModal, userData, removeUserData } = useAuthModel()
     const [ isSignOutFocus, setIsSignOutFocus ] = useState<boolean>(false)
 
     const toggleSignOutFocus = () => setIsSignOutFocus((!isSignOutFocus))
@@ -19,7 +19,7 @@ const HeaderAuth: FC = () => {
     const openSignUp = () => setModal(ModalShowTypes.SignUp)
 
     const handleLogout = () => {
-        localStorage.clear()
+        removeUserData()
         window.location.reload()
     }
 

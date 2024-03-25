@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FC } from 'react'
 
-import classes from './HeaderLogo.module.sass'
 import headerLogoImage from '@/shared/assets/images/Header/HeaderLogo.svg'
+import classes from './HeaderLogo.module.sass'
 
 
 const HeaderLogo: FC = () => {

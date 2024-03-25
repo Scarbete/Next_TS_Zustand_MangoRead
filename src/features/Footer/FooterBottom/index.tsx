@@ -1,0 +1,1 @@
+export {default as FooterBottom} from './view/FooterBottom'

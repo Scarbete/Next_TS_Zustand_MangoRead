@@ -2,7 +2,7 @@
 import { FC } from 'react'
 import { IGenre } from '@/widgets/MainPageWidget/types/MainPageTypes'
 import { useFilterModel } from '@/features/MainPage/FilterBar/model/FilterBarModel'
-import CustomCheckbox from '@/shared/ui/CustomCheckBox/CustomCheckBox'
+import CustomCheckbox from '@/shared/ui/CustomCheckBox/view/CustomCheckBox'
 import Image from 'next/image'
 
 import genresArrowImage from '@/shared/assets/images/Filter/genresArrow.svg'

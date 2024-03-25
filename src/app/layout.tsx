@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import type { Metadata } from 'next'
-import RootTemplateLayout from '../application/layout/RootLayout'
+import { RootTemplateLayout } from '@/application/layout/RootTemplateLayout'
 import '@/application/styles/global.scss'
 
 export const metadata: Metadata = {

@@ -1,0 +1,1 @@
+export {default as TypesFilterBar} from './view/TypesFilterBar'

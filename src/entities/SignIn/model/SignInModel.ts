@@ -1,6 +1,7 @@
 import { IDecoded, ISignInModelState } from '@/entities/SignIn/types/SignInTypes'
 import { create } from 'zustand'
 import { jwtDecode } from 'jwt-decode'
+import Cookies from 'js-cookie'
 
 import { $authApi, $mainApi } from '@/shared/lib/axios/requester'
 import { alertToast } from '@/shared/ui/CustomAlert/CustomAlert'
@@ -55,9 +56,9 @@ export const useSignInModel = create<ISignInModelState>((set, get) => ({
             const { status, data } = await $mainApi.post(`users/login/`, userData)
             if (status <= 204 && status >= 200) {
                 const { user_id }: IDecoded = jwtDecode(data.tokens.access)
-                localStorage.setItem('user_id', JSON.stringify(user_id))
-                localStorage.setItem(ACCESS_TOKEN, data.tokens.access)
-                localStorage.setItem(REFRESH_TOKEN, data.tokens.refresh)
+                Cookies.set('user_id', user_id.toString())
+                Cookies.set(ACCESS_TOKEN, data.tokens.access)
+                Cookies.set(REFRESH_TOKEN, data.tokens.refresh)
                 asyncGetProfile(Number(user_id))
             }
         }
@@ -70,7 +71,7 @@ export const useSignInModel = create<ISignInModelState>((set, get) => ({
         try {
             const { data, status } = await $authApi.get(`/users/profile/${id}/`)
             if (status <= 204 && status >= 200) {
-                localStorage.setItem('userData', JSON.stringify(data))
+                Cookies.set('userData', JSON.stringify(data))
                 set(() => ({
                     userData: { username: '', password: '' },
                     successSignIn: true

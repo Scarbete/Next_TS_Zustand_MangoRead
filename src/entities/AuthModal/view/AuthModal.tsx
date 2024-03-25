@@ -2,15 +2,15 @@
 import Image from 'next/image'
 import { ModalShowTypes } from '../types/AuthModalTypes'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
-import SignIn from '@/entities/SignIn/view/SignIn'
-import SignUp from '@/entities/SignUp/view/SignUp'
-import CustomModal from '@/shared/ui/CustomModal/CustomModal'
+import { SignIn } from '@/entities/SignIn'
+import { SignUp } from '@/entities/SignUp'
+import CustomModal from '@/shared/ui/CustomModal/view/CustomModal'
 
-import classes from './AuthModal.module.sass'
 import modalCloseImage from '@/shared/assets/images/Modal/CloseModal.svg'
+import classes from './AuthModal.module.sass'
 
 
-const AuthModal = () => {
+export const AuthModal = () => {
     const { modalShowType, setModal } = useAuthModel()
     const isSignIn = modalShowType === ModalShowTypes.SignIn
 
@@ -59,5 +59,3 @@ const AuthModal = () => {
         </CustomModal>
     )
 }
-
-export default AuthModal

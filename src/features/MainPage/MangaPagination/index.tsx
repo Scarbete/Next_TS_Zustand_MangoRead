@@ -1,0 +1,1 @@
+export {default as MangaPagination} from './view/MangaPagination'

@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import HeaderLogo from '@/features/Header/HeaderLogo/view/HeaderLogo'
-import HeaderSearchBar from '@/features/Header/HeaderSearchBar/view/HeaderSearchBar'
-import HeaderAuth from '@/features/Header/HeaderAuth/view/HeaderAuth'
-import MultiContainer from '@/shared/ui/MultiContainer/MultiContainer'
+import MultiContainer from '@/shared/ui/MultiContainer/view/MultiContainer'
+import { HeaderLogo } from '@/features/Header/HeaderLogo'
+import { HeaderSearchBar } from '@/features/Header/HeaderSearchBar'
+import { HeaderAuth } from '@/features/Header/HeaderAuth'
 import classes from './Header.module.sass'
 
 

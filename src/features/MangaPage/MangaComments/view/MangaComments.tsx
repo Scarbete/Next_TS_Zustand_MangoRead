@@ -1,11 +1,12 @@
 'use client'
 import { FC, useEffect } from 'react'
-import { IManga } from '@/widgets/MainPageWidget/types/MainPageTypes'
+
 import Image from 'next/image'
-import { useCommentsModal } from '@/entities/CommentsModal/model/CommentsModalModel'
-import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
+import { IManga } from '@/widgets/MainPageWidget'
+import { ModalShowTypes, useAuthModel } from '@/entities/AuthModal'
+import { useCommentsModal } from '@/entities/CommentsModal'
 import { FRONT_URL } from '@/shared/lib/variables/variables'
-import { ModalShowTypes } from '@/entities/AuthModal/types/AuthModalTypes'
+
 import classes from './MangaComments.module.sass'
 
 interface Props {

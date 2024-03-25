@@ -1,6 +1,6 @@
-import classes from './MangaSynopsis.module.sass'
 import { FC } from 'react'
-import { IManga } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import { IManga } from '@/widgets/MainPageWidget'
+import classes from './MangaSynopsis.module.sass'
 
 interface Props {
     manga: IManga | null

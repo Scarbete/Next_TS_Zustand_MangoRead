@@ -1,4 +1,4 @@
-import { IFullUserData } from "@/shared/types/types";
+import { IFullUserData } from '@/shared/types/types'
 
 export enum ModalShowTypes {
     Close = '',
@@ -11,4 +11,5 @@ export interface IAuthModelState {
     user_id: string | null
     userData: IFullUserData | null
     setModal: (type: ModalShowTypes) => void
+    removeUserData: () => void
 }

@@ -1,0 +1,1 @@
+export {default as MangaSynopsis} from './view/MangaSynopsis'

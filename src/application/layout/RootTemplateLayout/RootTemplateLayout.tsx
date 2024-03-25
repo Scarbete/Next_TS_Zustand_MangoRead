@@ -1,14 +1,14 @@
 import { ToastContainer } from 'react-toastify'
 import { FC, ReactNode } from 'react'
 
-import Header from '@/widgets/Header/Header'
-import Footer from '@/widgets/Footer/Footer'
+import { Header } from '@/widgets/Header'
+import { Footer } from '@/widgets/Footer'
 
 interface Props {
     children: ReactNode
 }
 
-const RootLayout: FC<Props> = props => {
+const RootTemplateLayout: FC<Props> = props => {
     const { children } = props
 
     return (
@@ -29,4 +29,4 @@ const RootLayout: FC<Props> = props => {
     )
 }
 
-export default RootLayout
+export default RootTemplateLayout

@@ -75,8 +75,8 @@ export const useSignUpModel = create<ISignUpModel>((set, get) => ({
     asyncSignUp: async (userData) => {
         try {
             const form = createForm(userData)
-
             const { status } = await $mainApi.post(`users/signup/`, form)
+
             if (status <= 204 && status >= 200) {
                 set(() => ({
                     userData: {

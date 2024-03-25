@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { IManga } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import { IManga } from '@/widgets/MainPageWidget'
 
 import classes from './MangoInfoBlock.module.sass'
 import Image from 'next/image'

@@ -1,19 +1,18 @@
 'use client'
 import { ChangeEvent, FC, useEffect } from 'react'
-import { ModalShowTypes } from '@/entities/AuthModal/types/AuthModalTypes'
-import { useSignInModel } from '@/entities/SignIn/model/SignInModel'
-import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
+import { useSignInModel } from '@/entities/SignIn'
+import { ModalShowTypes, useAuthModel } from '@/entities/AuthModal'
 
-import CustomCheckBox from '@/shared/ui/CustomCheckBox/CustomCheckBox'
-import CustomInput from '@/shared/ui/CustomInput/CustomInput'
-import CustomButton from '@/shared/ui/CustomButton/CustomButton'
+import { CustomInput } from '@/shared/ui/CustomInput'
+import { CustomCheckBox } from '@/shared/ui/CustomCheckBox'
+import { CustomButton } from '@/shared/ui/CustomButton'
 
 import checkBoxOnImage from '@/shared/assets/images/Modal/signInCheckBoxOn.svg'
 import checkBoxOffImage from '@/shared/assets/images/Modal/signInCheckBoxOff.svg'
 import classes from './SignIn.module.sass'
 
 
-const SignIn: FC = () => {
+export const SignIn: FC = () => {
     const {
         userData,
         errors,
@@ -85,5 +84,3 @@ const SignIn: FC = () => {
         </form>
     )
 }
-
-export default SignIn

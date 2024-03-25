@@ -1,9 +1,11 @@
 import { FC } from 'react'
-import MultiContainer from '@/shared/ui/MultiContainer/MultiContainer'
-import MainPageWidget from '@/widgets/MainPageWidget/view/MainPageWidget'
+import { MultiContainer } from '@/shared/ui/MultiContainer'
 
-import { getAllGenre } from '@/widgets/MainPageWidget/model/MainPageModel'
-import { GenresMainPage } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import {
+    GenresMainPage,
+    MainPageWidget,
+    getAllGenre
+} from '@/widgets/MainPageWidget'
 
 
 const MainPage: FC = async () => {

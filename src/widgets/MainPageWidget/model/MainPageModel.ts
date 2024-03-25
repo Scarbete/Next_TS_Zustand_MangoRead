@@ -32,7 +32,6 @@ export const useMainPageModel = create<IMainPageModel>((set) => ({
     asyncGetAllMangas: async (limit: number, offset: number) => {
         try {
             const { data } = await $mainApi.get(`manga/?limit=${limit}&offset=${offset}`)
-            console.log(data)
             set(() => ({
                 mangasResponse: data ?? null,
                 count: data?.count ?? 0

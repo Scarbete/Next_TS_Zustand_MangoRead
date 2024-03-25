@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import MangaPageWidget from '@/widgets/MangaPageWidget/view/MangaPageWidget'
-import MultiContainer from '@/shared/ui/MultiContainer/MultiContainer'
+import { MangaPageWidget } from '@/widgets/MangaPageWidget'
+import { MultiContainer } from '@/shared/ui/MultiContainer'
 
 interface Props {
     params: {

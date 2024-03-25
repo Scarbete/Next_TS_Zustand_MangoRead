@@ -1,6 +1,6 @@
 'use client'
 import { FC } from 'react'
-import { IManga } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import { IManga } from '@/widgets/MainPageWidget'
 import Link from 'next/link'
 import Image from 'next/image'
 import classes from './MangaCard.module.sass'

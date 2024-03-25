@@ -1,15 +1,17 @@
 'use client'
-import {ChangeEventHandler, FC, FormEventHandler} from 'react'
-import { ICommentsModalProps } from '@/entities/CommentsModal/types/CommentsModalTypes'
-import { useCommentsModal } from '@/entities/CommentsModal/model/CommentsModalModel'
-import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
-import CustomModal from '@/shared/ui/CustomModal/CustomModal'
-import classNames from 'classnames'
 import Image from 'next/image'
+import { ChangeEventHandler, FC, FormEventHandler } from 'react'
+
+import { CustomModal } from '@/shared/ui/CustomModal'
+import classNames from 'classnames'
+
+import { ICommentsModalProps, useCommentsModal } from '@/entities/CommentsModal'
+import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
+
 import classes from './CommentsModal.module.sass'
 
 
-const CommentsModal: FC<ICommentsModalProps> = props => {
+export const CommentsModal: FC<ICommentsModalProps> = props => {
     const { mangaId } = props
     const { userData, user_id } = useAuthModel()
 
@@ -72,5 +74,3 @@ const CommentsModal: FC<ICommentsModalProps> = props => {
         </>
     )
 }
-
-export default CommentsModal

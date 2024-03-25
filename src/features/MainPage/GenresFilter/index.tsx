@@ -1,0 +1,1 @@
+export {default as GenresFilter} from './view/GenresFilter'

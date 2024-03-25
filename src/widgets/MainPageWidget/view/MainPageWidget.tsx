@@ -1,17 +1,18 @@
 'use client'
 import { FC, useEffect } from 'react'
-import { IMainPageProps } from '@/widgets/MainPageWidget/types/MainPageTypes'
-import { useMainPageModel } from '@/widgets/MainPageWidget/model/MainPageModel'
 
-import AuthModal from '@/entities/AuthModal/view/AuthModal'
-import FilterBar from '@/features/MainPage/FilterBar/view/FilterBar'
-import MangaList from '@/features/MainPage/MangaList/view/MangaList'
-import MangaPagination from '@/features/MainPage/MangaPagination/view/MangaPagination'
+import { useMainPageModel } from '@/widgets/MainPageWidget'
+import { IMainPageProps } from '@/widgets/MainPageWidget/types/MainPageTypes'
+
+import { AuthModal } from '@/entities/AuthModal'
+import { FilterBar } from '@/features/MainPage/FilterBar'
+import { MangaList } from '@/features/MainPage/MangaList'
+import { MangaPagination } from '@/features/MainPage/MangaPagination'
 
 import classes from './MainPageWidget.module.sass'
 
 
-const MainPageWidget: FC<IMainPageProps> = props => {
+export const MainPageWidget: FC<IMainPageProps> = props => {
     const { genres } = props
 
     const {
@@ -37,5 +38,3 @@ const MainPageWidget: FC<IMainPageProps> = props => {
         </div>
     )
 }
-
-export default MainPageWidget
