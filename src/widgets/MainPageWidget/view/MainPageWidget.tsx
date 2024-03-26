@@ -1,8 +1,6 @@
 'use client'
 import { FC, useEffect } from 'react'
-
-import { useMainPageModel } from '@/widgets/MainPageWidget'
-import { IMainPageProps } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import { IMainPageProps, useMainPageModel } from '@/widgets/MainPageWidget'
 
 import { AuthModal } from '@/entities/AuthModal'
 import { FilterBar } from '@/features/MainPage/FilterBar'
