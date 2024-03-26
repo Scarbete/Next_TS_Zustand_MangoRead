@@ -1,6 +1,7 @@
 'use client'
 import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import classNames from 'classnames'
 import classes from './CustomModal.module.sass'
 
 interface Props {
@@ -38,21 +39,30 @@ const CustomModal: FC<Props> = props => {
     return !mounted ? <></> : createPortal(
         <>
             <div
-                className={`${classes.background} ${open ? classes.open : classes.closed}`}
+                className={
+                    classNames(
+                        classes.background,
+                        {[classes.open]: open},
+                        {[classes.closed]: !open}
+                    )
+                }
                 onClick={event => {
                     event.stopPropagation()
                     handleClose()
                 }}>
             </div>
             <div
-                className={`${
-                    classes.wrapper} 
-                    ${open ? classes.open : classes.closed} 
-                    ${className ? className : ''}`
+                className={
+                    classNames(
+                        classes.wrapper,
+                        className,
+                        {[classes.open]: open},
+                        {[classes.closed]: !open},
+                    )
                 }
                 style={style}
             >
-                <div className={`${classes.content} ${contentClass || ''}`}>
+                <div className={classNames(classes.content, contentClass)}>
                     {children}
                 </div>
             </div>

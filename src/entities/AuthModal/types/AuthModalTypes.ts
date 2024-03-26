@@ -13,4 +13,5 @@ export interface IAuthModelState {
     setModal: (type: ModalShowTypes) => void
     removeUserData: () => void
     isSignIn: () => boolean
+    setUserData: (userData: IFullUserData) => void
 }

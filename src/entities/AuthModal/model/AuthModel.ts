@@ -5,7 +5,7 @@ import { IAuthModelState, ModalShowTypes } from '@/entities/AuthModal/types/Auth
 
 export const useAuthModel = create<IAuthModelState>((set, get) => ({
     user_id: Cookies.get('user_id') || null,
-    userData: Cookies.get('userData') ? JSON.parse(Cookies.get('userData') as string) : null,
+    userData: null,
     modalShowType: ModalShowTypes.Close,
     isSignIn: () => {
         const {modalShowType} = get()
@@ -19,5 +19,8 @@ export const useAuthModel = create<IAuthModelState>((set, get) => ({
     },
     setModal: (type: ModalShowTypes) => {
         set({ modalShowType: type})
+    },
+    setUserData: (userData) => {
+        set({ userData: userData })
     }
 }))

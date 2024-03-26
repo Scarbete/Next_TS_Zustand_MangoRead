@@ -73,7 +73,10 @@ export const useSignInModel = create<ISignInModelState>((set, get) => ({
             if (status <= 204 && status >= 200) {
                 Cookies.set('userData', JSON.stringify(data))
                 set(() => ({
-                    userData: { username: '', password: '' },
+                    userData: {
+                        username: '',
+                        password: ''
+                    },
                     successSignIn: true
                 }))
                 alertToast('success', 'Вы успешно зашли в аккаунт!')

@@ -1,8 +1,10 @@
 'use client'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Image from 'next/image'
+import Cookies from 'js-cookie'
 import classNames from 'classnames'
 
+import { useProfileModel } from '@/entities/ProfileModal'
 import { ModalShowTypes, useAuthModel } from '@/entities/AuthModal'
 import { CustomButton } from '@/shared/ui/CustomButton'
 
@@ -11,9 +13,12 @@ import classes from './HeaderAuth.module.sass'
 
 
 const HeaderAuth: FC = () => {
-    const { setModal, userData, removeUserData } = useAuthModel()
-    const [ isSignOutFocus, setIsSignOutFocus ] = useState<boolean>(false)
+    const { setProfileModalVisible } = useProfileModel()
+    const openProfileModal = () => setProfileModalVisible(true)
 
+    const { setModal, userData, removeUserData, setUserData } = useAuthModel()
+
+    const [ isSignOutFocus, setIsSignOutFocus ] = useState<boolean>(false)
     const toggleSignOutFocus = () => setIsSignOutFocus((!isSignOutFocus))
 
     const openSignIn = () => setModal(ModalShowTypes.SignIn)
@@ -24,11 +29,18 @@ const HeaderAuth: FC = () => {
         typeof window !== 'undefined' && window.location.reload()
     }
 
+    useEffect(() => {
+        if (Cookies.get('userData')) {
+            const myUserData = JSON.parse(Cookies.get('userData') as string)
+            setUserData(myUserData)
+        }
+    }, [])
+
     return (
         <div className={classes.authButtons}>
             {userData ? (
                 <div className={classes.userBlock}>
-                    <p>{userData.username}</p>
+                    <p>{userData?.username}</p>
                     <button onClick={toggleSignOutFocus} className={classes.logButton}>
                         <Image
                             src={userData?.image as string}
@@ -57,7 +69,7 @@ const HeaderAuth: FC = () => {
                 </>
             )}
             <ul className={classNames(classes.dropDownView, {[classes.dropDownAnimate]: isSignOutFocus})}>
-                <li>
+                <li onClick={openProfileModal}>
                     <span>Профиль</span>
                 </li>
                 <li onClick={handleLogout}>
