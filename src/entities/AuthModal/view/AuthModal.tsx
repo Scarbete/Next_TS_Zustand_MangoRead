@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import classNames from 'classnames'
 import { ModalShowTypes } from '@/entities/AuthModal'
 import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
 import { SignIn } from '@/entities/SignIn'
@@ -11,8 +12,7 @@ import classes from './AuthModal.module.sass'
 
 
 export const AuthModal = () => {
-    const { modalShowType, setModal } = useAuthModel()
-    const isSignIn = modalShowType === ModalShowTypes.SignIn
+    const { modalShowType, setModal, isSignIn } = useAuthModel()
 
     const closeModal = () => setModal(ModalShowTypes.Close)
     const openSignIn = () => setModal(ModalShowTypes.SignIn)
@@ -32,13 +32,7 @@ export const AuthModal = () => {
                     <button onClick={openSignUp}>
                         Регистрация
                     </button>
-                    <div
-                        className={classes.divider}
-                        style={{
-                            left: isSignIn ? '-0px' : '92px',
-                            width: isSignIn ? '64px' : '164px'
-                        }}
-                    ></div>
+                    <div className={classNames(classes.divider, {[classes.dividerIsSignIn]: isSignIn()})}></div>
                 </div>
                 <Image
                     src={modalCloseImage}
@@ -49,10 +43,7 @@ export const AuthModal = () => {
                     onClick={closeModal}
                 />
             </div>
-            <div
-                style={{height: isSignIn ? '340px' : '520px'}}
-                className={classes.modalSlider}
-            >
+            <div className={classNames(classes.modalSlider, {[classes.modalSliderSignIn]: isSignIn()})}>
                 <SignIn/>
                 <SignUp/>
             </div>

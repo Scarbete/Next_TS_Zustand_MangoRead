@@ -1,5 +1,6 @@
 'use client'
 import { ChangeEvent, FC, useEffect } from 'react'
+import classNames from 'classnames'
 import { useSignInModel } from '@/entities/SignIn'
 import { ModalShowTypes, useAuthModel } from '@/entities/AuthModal'
 
@@ -25,8 +26,7 @@ export const SignIn: FC = () => {
     } = useSignInModel()
 
     const { username, password } = userData
-    const { setModal, modalShowType } = useAuthModel()
-    const isSignIn = modalShowType === ModalShowTypes.SignIn
+    const { setModal, isSignIn } = useAuthModel()
 
     const handleChangeInput = (event: ChangeEvent<HTMLInputElement>): void => {
         const { name, value } = event.target
@@ -49,9 +49,8 @@ export const SignIn: FC = () => {
 
     return (
         <form
-            className={classes.SignIn}
+            className={classNames(classes.SignIn, {[classes.SignInMarginLeft]: isSignIn()})}
             onSubmit={handleSubmit}
-            style={{marginLeft: isSignIn ? '0' : 'calc(-100% - 100px)'}}
         >
             <CustomInput
                 value={username}
