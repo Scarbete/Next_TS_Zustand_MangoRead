@@ -11,7 +11,7 @@ import modalCloseImage from '@/shared/assets/images/Modal/CloseModal.svg'
 import classes from './AuthModal.module.sass'
 
 
-export const AuthModal = () => {
+const AuthModal = () => {
     const { modalShowType, setModal, isSignIn } = useAuthModel()
 
     const closeModal = () => setModal(ModalShowTypes.Close)
@@ -50,3 +50,5 @@ export const AuthModal = () => {
         </CustomModal>
     )
 }
+
+export default AuthModal

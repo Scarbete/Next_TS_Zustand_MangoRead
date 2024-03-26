@@ -13,7 +13,7 @@ import checkBoxOffImage from '@/shared/assets/images/Modal/signInCheckBoxOff.svg
 import classes from './SignIn.module.sass'
 
 
-export const SignIn: FC = () => {
+const SignIn: FC = () => {
     const {
         userData,
         errors,
@@ -40,7 +40,7 @@ export const SignIn: FC = () => {
     }, [userData])
 
     useEffect(() => {
-        if (successSignIn) {
+        if (successSignIn && typeof window !== 'undefined') {
             window.location.reload()
             setSuccessSignIn(false)
             setModal(ModalShowTypes.Close)
@@ -83,3 +83,5 @@ export const SignIn: FC = () => {
         </form>
     )
 }
+
+export default SignIn

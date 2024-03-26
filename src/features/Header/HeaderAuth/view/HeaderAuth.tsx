@@ -1,6 +1,7 @@
 'use client'
 import { FC, useState } from 'react'
 import Image from 'next/image'
+import classNames from 'classnames'
 
 import { ModalShowTypes, useAuthModel } from '@/entities/AuthModal'
 import { CustomButton } from '@/shared/ui/CustomButton'
@@ -20,7 +21,9 @@ const HeaderAuth: FC = () => {
 
     const handleLogout = () => {
         removeUserData()
-        window.location.reload()
+        typeof window !== 'undefined'
+            ? window.location.reload()
+            : null
     }
 
     return (
@@ -55,13 +58,7 @@ const HeaderAuth: FC = () => {
                     </CustomButton>
                 </>
             )}
-            <ul
-                className={classes.dropDownView}
-                style={{
-                    opacity: Number(isSignOutFocus),
-                    height: isSignOutFocus ? '80px' : '0px',
-                }}
-            >
+            <ul className={classNames(classes.dropDownView, {[classes.dropDownAnimate]: isSignOutFocus})}>
                 <li>
                     {/*<Image/>*/}
                     <span>Профиль</span>

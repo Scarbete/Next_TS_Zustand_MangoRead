@@ -11,7 +11,7 @@ import { useAuthModel } from '@/entities/AuthModal/model/AuthModel'
 import classes from './CommentsModal.module.sass'
 
 
-export const CommentsModal: FC<ICommentsModalProps> = props => {
+const CommentsModal: FC<ICommentsModalProps> = props => {
     const { mangaId } = props
     const { userData, user_id } = useAuthModel()
 
@@ -74,3 +74,5 @@ export const CommentsModal: FC<ICommentsModalProps> = props => {
         </>
     )
 }
+
+export default CommentsModal

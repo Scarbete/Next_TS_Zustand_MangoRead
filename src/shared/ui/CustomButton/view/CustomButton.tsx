@@ -1,3 +1,4 @@
+'use client'
 import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from 'react'
 import { objectWithoutProperties } from '@/shared/lib/helpers/helpers'
 import classNames from 'classnames'

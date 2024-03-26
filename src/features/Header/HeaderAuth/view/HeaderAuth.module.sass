@@ -27,7 +27,6 @@
     .dropDownView
         position: absolute
         width: 140px
-        height: fit-content
         top: 90px
         right: 0
         border-radius: 6px
@@ -38,6 +37,9 @@
         z-index: 10
         transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), height 250ms cubic-bezier(0.4, 0, 0.2, 1)
         overflow: hidden
+
+        opacity: 0
+        height: 0
 
         li:nth-child(1)
             margin-top: -1px
@@ -58,3 +60,7 @@
             cursor: pointer
             background: var(--colors-gray-100)
             transition: 200ms ease-in-out
+
+    .dropDownAnimate
+        opacity: 1
+        height: 80px

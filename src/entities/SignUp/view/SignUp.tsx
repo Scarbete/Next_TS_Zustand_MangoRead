@@ -12,7 +12,7 @@ import defaultAvatar from '@/shared/assets/images/Modal/AvatarMangoRead.png'
 import classes from './SignUp.module.sass'
 
 
-export const SignUp: FC = () => {
+const SignUp: FC = () => {
     const {
         userData,
         setUserData,
@@ -114,3 +114,5 @@ export const SignUp: FC = () => {
         </form>
     )
 }
+
+export default SignUp
