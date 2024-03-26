@@ -12,7 +12,7 @@ import { MangaPagination } from '@/features/MainPage/MangaPagination'
 import classes from './MainPageWidget.module.sass'
 
 
-export const MainPageWidget: FC<IMainPageProps> = props => {
+const MainPageWidget: FC<IMainPageProps> = props => {
     const { genres } = props
 
     const {
@@ -38,3 +38,5 @@ export const MainPageWidget: FC<IMainPageProps> = props => {
         </div>
     )
 }
+
+export default MainPageWidget
