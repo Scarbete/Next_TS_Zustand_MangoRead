@@ -21,9 +21,7 @@ const HeaderAuth: FC = () => {
 
     const handleLogout = () => {
         removeUserData()
-        typeof window !== 'undefined'
-            ? window.location.reload()
-            : null
+        typeof window !== 'undefined' && window.location.reload()
     }
 
     return (
@@ -60,11 +58,9 @@ const HeaderAuth: FC = () => {
             )}
             <ul className={classNames(classes.dropDownView, {[classes.dropDownAnimate]: isSignOutFocus})}>
                 <li>
-                    {/*<Image/>*/}
                     <span>Профиль</span>
                 </li>
                 <li onClick={handleLogout}>
-                    {/*<Image/>*/}
                     <span>Выйти</span>
                 </li>
             </ul>

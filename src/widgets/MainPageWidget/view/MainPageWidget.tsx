@@ -12,7 +12,7 @@ import { MangaPagination } from '@/features/MainPage/MangaPagination'
 import classes from './MainPageWidget.module.sass'
 
 
-const MainPageWidget: FC<IMainPageProps> = props => {
+const MainPageWidget: FC<IMainPageProps> = (props) => {
     const { genres } = props
 
     const {
