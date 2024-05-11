@@ -30,10 +30,6 @@ export interface IGenre {
     name?: string
 }
 
-export interface IMainPageProps {
-    genres?: IGenre[] | null
-}
-
 export interface ResponseMangaMainPage extends IResponse {
     results?: IManga[]
 }
@@ -46,12 +42,14 @@ export type MangasMainPage = ( ResponseMangaMainPage | null | undefined )
 export type GenresMainPage = ( ResponseGenreMainPage | null | undefined )
 
 export interface IMainPageModel {
-    mangasResponse: MangasMainPage
+    mangasResponse: null | IManga[]
+    genresResponse: null | IGenre[]
     limit: number
     offset: number
     count: number
     page: number
     setPage: (newPage: number) => void
     setOffset: (newOffset: number) => void
-    asyncGetAllMangas: (limit: number, offset: number) => void
+    getAllMangas: () => void
+    getAllGenres: () => void
 }

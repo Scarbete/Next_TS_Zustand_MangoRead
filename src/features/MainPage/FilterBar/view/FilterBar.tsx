@@ -1,6 +1,6 @@
 'use client'
 import { FC } from 'react'
-import { IGenre } from '@/widgets/MainPageWidget/types/MainPageTypes'
+import classNames from 'classnames'
 import { useFilterModel } from '@/features/MainPage/FilterBar/model/FilterBarModel'
 
 import CustomButton from '@/shared/ui/CustomButton/view/CustomButton'
@@ -9,22 +9,15 @@ import { GenresFilter } from '@/features/MainPage/GenresFilter'
 
 import classes from './FilterBar.module.sass'
 
-interface Props {
-    genres: IGenre[]
-}
 
-const FilterBar: FC<Props> = props => {
-    const { genres } = props
+const FilterBar: FC = () => {
     const { isGenreFilter } = useFilterModel()
 
     return (
         <div className={classes.filterBar}>
-            <div
-                className={classes.filterSlider}
-                style={{marginLeft: isGenreFilter ? '0' : '-500px'}}
-            >
-                <TypesFilterBar genres={genres} />
-                <GenresFilter/>
+            <div className={classNames(classes.filterSlider, {[classes.space]: isGenreFilter})}>
+                <TypesFilterBar />
+                <GenresFilter />
             </div>
             <div className={classes.bottomButtons}>
                 <CustomButton variant={'secondary'}>

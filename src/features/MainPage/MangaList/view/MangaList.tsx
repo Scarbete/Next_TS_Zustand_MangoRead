@@ -1,18 +1,15 @@
 import { FC } from 'react'
-import { IManga } from '@/widgets/MainPageWidget'
 import MangaCard from '@/features/MainPage/MangaCard/view/MangaCard'
+import { useMainPageModel } from '@/widgets/MainPageWidget'
 import classes from './MangaList.module.sass'
 
-interface Props {
-    mangas: IManga[]
-}
 
-const MangaList: FC<Props> = props => {
-    const { mangas } = props
+const MangaList: FC = () => {
+    const { mangasResponse } = useMainPageModel()
 
     return (
         <div className={classes.mangasList}>
-            {mangas?.map(item =>
+            {mangasResponse?.map(item =>
                 <MangaCard
                     key={item.id}
                     manga={item}

@@ -1,24 +1,37 @@
-import { GenresMainPage, IMainPageModel } from '@/widgets/MainPageWidget/types/MainPageTypes'
-import { BASE_URL } from '@/shared/lib/variables/variables'
+import {
+    GenresMainPage,
+    IMainPageModel,
+    MangasMainPage
+} from '@/widgets/MainPageWidget/types/MainPageTypes'
+
 import { $mainApi } from '@/shared/lib/axios/requester'
 import { create } from 'zustand'
 
+
 export const getAllGenre = async (): Promise<GenresMainPage> => {
     try {
-        const response = await fetch(`${BASE_URL}genre/`, {
-            next: {
-                revalidate: 120
-            }
-        })
-        return response.json()
+        const { data } = await $mainApi.get(`genre`)
+        return data
     }
     catch (e) {
         return null
     }
 }
 
-export const useMainPageModel = create<IMainPageModel>((set) => ({
+export const getAllMangas = async (limit: number, offset: number): Promise<MangasMainPage> => {
+    try {
+        const { data } = await $mainApi.get(`manga/?limit=${limit}&offset=${offset}`)
+        return data
+    }
+    catch (e) {
+        return null
+    }
+}
+
+
+export const useMainPageModel = create<IMainPageModel>((set, get) => ({
     mangasResponse: null,
+    genresResponse: null,
     limit: 12,
     offset: 0,
     count: 0,
@@ -29,16 +42,16 @@ export const useMainPageModel = create<IMainPageModel>((set) => ({
     setOffset: (newOffset) => {
         set({ offset: newOffset })
     },
-    asyncGetAllMangas: async (limit: number, offset: number) => {
-        try {
-            const { data } = await $mainApi.get(`manga/?limit=${limit}&offset=${offset}`)
-            set(() => ({
-                mangasResponse: data ?? null,
-                count: data?.count ?? 0
-            }))
-        }
-        catch (e) {
-            return null
-        }
+    getAllMangas: async () => {
+        const { limit, offset } = get()
+        const data = await getAllMangas(limit, offset)
+        set(() => ({
+            mangasResponse: data?.results ?? null,
+            count: data?.count ?? 0
+        }))
+    },
+    getAllGenres: async () => {
+        const data = await getAllGenre()
+        set({ genresResponse: data?.results })
     }
 }))

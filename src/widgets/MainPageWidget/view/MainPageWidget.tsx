@@ -1,6 +1,6 @@
 'use client'
 import { FC, useEffect } from 'react'
-import { IMainPageProps, useMainPageModel } from '@/widgets/MainPageWidget'
+import { useMainPageModel } from '@/widgets/MainPageWidget'
 
 import { AuthModal } from '@/entities/AuthModal'
 import { ProfileModal } from '@/entities/ProfileModal'
@@ -11,19 +11,17 @@ import { MangaPagination } from '@/features/MainPage/MangaPagination'
 import classes from './MainPageWidget.module.sass'
 
 
-const MainPageWidget: FC<IMainPageProps> = (props) => {
-    const { genres } = props
+const MainPageWidget: FC = () => {
 
     const {
-        mangasResponse,
-        limit,
-        offset,
         page,
-        asyncGetAllMangas
+        getAllMangas,
+        getAllGenres
     } = useMainPageModel()
 
     useEffect(() => {
-        asyncGetAllMangas(limit, offset)
+        getAllMangas()
+        getAllGenres()
     }, [page])
 
     return (
@@ -31,8 +29,8 @@ const MainPageWidget: FC<IMainPageProps> = (props) => {
             <AuthModal />
             <ProfileModal />
             <div className={classes.widget}>
-                <FilterBar genres={genres ?? []} />
-                <MangaList mangas={mangasResponse?.results ?? []} />
+                <FilterBar />
+                <MangaList />
             </div>
             <MangaPagination />
         </div>

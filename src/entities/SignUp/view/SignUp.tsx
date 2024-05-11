@@ -15,13 +15,13 @@ import classes from './SignUp.module.sass'
 const SignUp: FC = () => {
     const {
         userData,
-        setUserData,
-        setUserImage,
         userImage,
         errors,
+        successSignUp,
+        setUserData,
+        setUserImage,
         validateForm,
         handleSubmit,
-        successSignUp,
         setSuccessSignUp
     } = useSignUpModel()
 
@@ -31,9 +31,11 @@ const SignUp: FC = () => {
     const imageRef = useRef<HTMLInputElement>(null)
     const clickAddImage = () => imageRef.current?.click()
 
-    const handleChangeInput = (event: ChangeEvent<HTMLInputElement>): void => {
+    const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target
-        setUserData({ [name]: value })
+        setUserData({
+            [name]: value
+        })
     }
 
     const handleChangeImage = (event: ChangeEvent<HTMLInputElement>) => {
@@ -41,8 +43,13 @@ const SignUp: FC = () => {
         file && setUserImage(file)
     }
 
-    const handleDragEnter: DragEventHandler<HTMLLabelElement> = (event) => event.preventDefault()
-    const handleDragOver: DragEventHandler<HTMLLabelElement> = (event) => event.preventDefault()
+    const handleDragEnter: DragEventHandler<HTMLLabelElement> = (event) => {
+        event.preventDefault()
+    }
+
+    const handleDragOver: DragEventHandler<HTMLLabelElement> = (event) => {
+        event.preventDefault()
+    }
 
     const handleDrop: DragEventHandler<HTMLLabelElement> = (event) => {
         event.preventDefault()

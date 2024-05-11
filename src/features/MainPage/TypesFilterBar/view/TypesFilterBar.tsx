@@ -4,20 +4,18 @@ import { FC } from 'react'
 import Image from 'next/image'
 import CustomCheckbox from '@/shared/ui/CustomCheckBox/view/CustomCheckBox'
 import { useFilterModel } from '@/features/MainPage/FilterBar'
-import { IGenre } from '@/widgets/MainPageWidget'
+import { useMainPageModel } from '@/widgets/MainPageWidget'
+
 
 import genresArrowImage from '@/shared/assets/images/Filter/genresArrow.svg'
 import checkBoxOnImage from '@/shared/assets/images/Filter/checkBoxOn.svg'
 import checkBoxOffImage from '@/shared/assets/images/Filter/checkBoxOff.svg'
 import classes from './TypesFilterBar.module.sass'
 
-interface Props {
-    genres: IGenre[]
-}
 
-const TypesFilterBar: FC<Props> = props => {
-    const { genres } = props
+const TypesFilterBar: FC = () => {
     const { setFilterType } = useFilterModel()
+    const { genresResponse } = useMainPageModel()
 
     return (
         <div className={classes.typesFilter}>
@@ -39,7 +37,7 @@ const TypesFilterBar: FC<Props> = props => {
             <div className={classes.typesListBlock}>
                 <h3>Тип</h3>
                 <div className={classes.lists}>
-                    {genres.map(item =>
+                    {genresResponse?.map(item =>
                         <CustomCheckbox
                             key={item.id}
                             checkBoxOnImage={checkBoxOnImage}

@@ -1,19 +1,13 @@
 import { FC } from 'react'
 import { MultiContainer } from '@/shared/ui/MultiContainer'
-
-import {
-    GenresMainPage,
-    MainPageWidget,
-    getAllGenre
-} from '@/widgets/MainPageWidget'
+import { MainPageWidget } from '@/widgets/MainPageWidget'
 
 
-const MainPage: FC = async () => {
-    const genres: GenresMainPage = await getAllGenre()
+const MainPage: FC = () => {
 
     return (
         <MultiContainer>
-            <MainPageWidget genres={genres?.results ?? null}/>
+            <MainPageWidget />
         </MultiContainer>
     )
 }
